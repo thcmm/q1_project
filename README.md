@@ -10,4 +10,6 @@ If possible:
 Suggest daily activities based on weather . 
 Display historical values for current date (as/if available) . 
 
+_Hardware Used:_ . 
+_API's Used:_ . 
 
