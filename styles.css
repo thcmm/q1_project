@@ -1,0 +1,86 @@
+/* TPS CSS
+Oct 2016
+Galvanize Delivers Project
+*/
+
+/* START DEFAULTS */
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  margin: auto;
+  min-height:200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+.carousel-caption {
+  display: none;
+}
+}
+/* END DEFAULTS */
+.row-3col-content {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+/*START CUSTOM CSS*/
+.h2-3col-title {
+  color: #FF1493;
+}
+
+/*START footer */
+.footer {
+  background-color: #337ab7;
+}
+.h3-footer-title {
+  color: #FFF;
+  text-align: left;
+}
+.footer-justify-left {
+  color: #FFF;
+  text-align: left;
+}
+
+.footer-darkBottom {
+  background-color: #0956DB;
+  display: block;
+
+}
+/*END footer*/
+
+.navbar a {
+    color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+.carousel-caption-center {
+  /*margin-top: auto;
+  margin-bottom: auto;*/
+  /*position: absolute;*/
+  top: 50%;
+  bottom: 20%;
+  transform: translateY(-50%);
+}
+
+.btn-myButton {
+    color: #fff;
+    background-color: #FF1493;
+    border-color: #FF1493;
+}
+
+
+/*END CUSTON CSS*/
