@@ -25,28 +25,28 @@
 </head>
 
 <body>
-  <!-- START: NAV -->
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#the-menu">
+    <!-- START: NAV -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#the-menu">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand brand" href="/index.html">Sensor I/O</a>
-  </div>
+                <a class="navbar-brand brand" href="/index.html">Sensor I/O</a>
+            </div>
 
-  <div class="collapse navbar-collapse" id="the-menu">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/index.html">Home</a></li>
-      <li><a href="/contact.html">Future Page</a></li>
-    </ul>
-  </div>
-</div>
-</nav>
-<!-- END: NAV -->
-
+            <div class="collapse navbar-collapse" id="the-menu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/index.html">Home</a></li>
+                    <li><a href="/contact.html">Future Page</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END: NAV -->
+    <!-- START: Sensor / API display -->
     <div class="container">
         <div class="page-header">
             <h1><span class="glyphicon glyphicon-home"></span>&nbsp;Sensor readings here:</h1></div>
@@ -65,21 +65,53 @@
             </div>
         </div>
     </div>
-
+    <!-- END: Sensor / API display -->
+    <!-- START: Form -->
     <div class="container">
-        <!-- START: main content -->
-
-        <!-- END: main content -->
-
-
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <!-- EMPTY -->
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="city" class="col-sm-3 control-label">City</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-circle-arrow-right"></span>
+                                <input type="text" class="form-control" id="yourName" placeholder="City Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="yourEmail" class="col-sm-3 control-label">State</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-circle-arrow-right"></span>
+                                <input type="text" class="form-control" id="state" placeholder="State">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Get Forecast</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <!-- EMPTY -->
+            </div>
+        </div>
     </div>
-
+    <!-- END: Form -->
+    <!-- START: Footer -->
     <div id="footer">
         <div class="container">
             <div class="text-muted pull-left"><a href="#" target="_blank">Built with Bootstrap&reg;</a></div>
             <div class="text-muted pull-right">&copy; <a href="#" target="_blank">TPS</a> 2016</div>
         </div>
     </div>
+    <!-- END: Footer -->
 </body>
 
 </html>
