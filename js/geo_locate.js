@@ -28,12 +28,15 @@ function showPosition(position) {
             var temp_f = parsed_json['current_observation']['temp_f'];
             var alt_ft = parsed_json['current_observation']['observation_location']['elevation'];
             var icon_url = parsed_json['current_observation']['icon_url'];
+            var humidity = parsed_json['current_observation']['relative_humidity'];
+            console.log("query relative_humidity", humidity);
             // var gotQuery = "Current temp in " + location + " " + "CO" + " is: " + temp_f+"F";
             var obloc = parsed_json['current_observation']['display_location']['state_name'];
             console.log("query state_name", obloc);
             $('#queryReturnLocation').html("Location : " + location);
             $('#queryReturnElevation').html("Elevation : " + alt_ft);
             $('#queryReturnTemp').html("Temperature : " + temp_f);
+            $('#queryReturnHumidity').html("Humidity : " + humidity);
             document.getElementById("forecastIcon").innerHTML = "<img src='"+icon_url+"'>"; //  make img-responsive
 
             //Satellite
@@ -50,7 +53,7 @@ function showPosition(position) {
             // initMap(map, lat, lon);
             var zoomLev = 16;
             initMap(lat,lon,zoomLev);
-
+            $("#ajax_loader").hide();
         }
     });
     // END : temp AIzaSyANnyMltzBRGiRZs1FoOTf-asFZBDkmprc

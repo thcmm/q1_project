@@ -26,6 +26,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <style>
+        #satShow>img {
+            /*uw-weather-img*/
+            margin: 5%;
+            width: 25%;
+            height: auto;
+        }
+
+        .foreCastText {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #d9d9d9;
+            font-weight: 600;
+            text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
+        }
+
         .page-header {
             /* Override Bootsrap page-header margin */
             margin-top: 10px;
@@ -43,170 +58,177 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        .img-responsive {
+        /*.img-responsive {
             display: block;
             margin-left: auto;
             margin-right: auto;
             max-width: 100%;
             height: auto;
-        }
+        }*/
         /* START: LOADING */
-        body
-    {
-        font-family: Arial;
-        font-size: 10pt;
-    }
-    .modal
-    {
-        position: fixed;
-        z-index: 999;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-color: Black;
-        filter: alpha(opacity=80);
-        opacity: 0.8;
-        -moz-opacity: 0.9;
-    }
-    .center
-    {
-        z-index: 1000;
-        margin: 300px auto;
-        padding: 10px;
-        width: 180px;
-        background-color: White;
-        border-radius: 10px;
-        filter: alpha(opacity=100);
-        opacity: 1;
-        -moz-opacity: 1;
-    }
-    .center img
-    {
-        height: 150px;
-        width: 150px;
-    }
+
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: Black;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            -moz-opacity: 0.9;
+        }
+
+        .center {
+            z-index: 1000;
+            margin: 300px auto;
+            padding: 10px;
+            width: 180px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+        .center img {
+            height: 150px;
+            width: 150px;
+        }
         /* END: LOADING */
     </style>
 </head>
 
 <body>
     <!-- START : NAV -->
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#the-menu">
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#the-menu">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-                <a class="navbar-brand brand" href="/index.html">Sensor I/O</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="the-menu">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/index.html">Home</a></li>
-                    <li><a href="/contact.html">Future Page</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- END : NAV -->
-
-    <!-- START : Sensor / API display -->
-    <div class="container">
-        <div class="page-header">
-            <div id="map"></div>
-            <h4><span class="glyphicon glyphicon-home"></span></h4>
-        </div>
-        <div class="row">
-            <!-- Realtime Panel -->
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Sensor Readings</div>
-                    <div class="panel-body">Display 1 here</div>
-                    <div class="panel-body">Display 2 here</div>
-                    <div class="panel-body"></div>
-                </div>
-            </div>
-            <!-- Forecasted Panel -->
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Forecasted</div>
-
-                    <div class="row">
-                        <div id="queryReturnLocation" class="col-md-6"></div>
-                        <div id="queryReturnTemp" class="col-md-6"></div>
-                    </div>
-
-                    <div id="forecastIcon" class="panel-body"></div>
-                    <!-- <div id="queryReturnLocation" class="panel-body"></div> -->
-                    <!-- <div id="queryReturnTemp" class="panel-body"></div> -->
-                    <div id="queryReturnElevation" class="panel-body"></div>
-                    <div id="geocoords" class="panel-body"></div>
-                    <div id="satShow" class="panel-body"></div>
+                    <a class="navbar-brand brand" href="/index.html">Sensor I/O</a>
                 </div>
 
-                <!-- style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; height: 100%;" -->
+                <div class="collapse navbar-collapse" id="the-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/index.html">Home</a></li>
+                        <li><a href="/contact.html">Future Page</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-    </div>
-    <!-- END : Sensor / API display -->
-    <!-- START : Form -->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <!-- EMPTY -->
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <form class="form-horizontal">
-                    <!-- START : INPUT FIELDS
-                    ****** We DO NOT NEED manual location entry with Geolocation working ******
-                    <div class="form-group">
-                        <label for="city" class="col-sm-3 control-label">City</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <span class="input-group-addon glyphicon glyphicon-circle-arrow-right"></span>
+        </nav>
+        <!-- END : NAV -->
+    </header>
 
-                                <input id="search" type="text" class="form-control" id="yourName" placeholder="City Name">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="yourEmail" class="col-sm-3 control-label">State</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <span class="input-group-addon glyphicon glyphicon-circle-arrow-right"></span>
-                                <input type="text" class="form-control" id="state" placeholder="State">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix">&nbsp;</div>
-                  END : INPUT FIELDS -->
+    <main>
+      <div id="map"></div>
+        <!-- START : Sensor / API display -->
+        <div class="container">
+            <div class="row">
+                <!-- START: Button form -->
+                <!-- <form class="form-horizontal"></form> -->
                     <div class="col-sm-12 text-center">
                         <button id="submitButton" type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-globe"></span>&nbsp;Location Forecast</button>
                     </div>
-                </form>
+
+                <!-- END: Button form -->
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <!-- EMPTY -->
+            <div class="row">
+                <!-- Realtime Panel -->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Sensor Readings</div>
+                        <div id="sensorReadingTemperature" class="panel-body"></div>
+                        <div id="sensorReadingHumidity" class="panel-body"></div>
+                        <div id="sensorReadingElevation" class="panel-body"></div>
+                    </div>
+                </div>
+                <!-- Forecasted Panel -->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Forecasted</div>
+                        <!-- Inner Row 1 : Location -->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div id="queryReturnLocation" class="col-md-6 text-center foreCastText"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <!-- Inner Row 2 : Forecast Icon -->
+                        <div class="row">
+                            <div class="col-md-5 text-right foreCastText"></div>
+                            <div id="forecastIcon" class="col-md-2 text-center"></div>
+                            <div class="col-md-5 text-right foreCastText"></div>
+                        </div>
+                        <!-- Inner Row 3 : Temperature -->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div id="queryReturnTemp" class="col-md-6 text-center foreCastText"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <!-- Inner Row 4 : Humidity -->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div id="queryReturnHumidity" class="col-md-6 text-center foreCastText"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <!-- Inner Row 5 : Elevation -->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div id="queryReturnElevation" class="col-md-6 text-center foreCastText"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <!-- Inner Row 6 : Weather Maps -->
+                        <div class="row">
+                            <div id="satShow" class="col-md-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; height: 100%;" -->
+                </div>
             </div>
         </div>
-    </div>
+        <!-- </div> -->
+        <!-- END : Sensor / API display -->
+        <!-- START : Form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <!-- EMPTY -->
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <form class="form-horizontal">
 
-    <!-- START: LOADING -->
-    <div id='ajax_loader' class="modal" style="display: none">
-        <div class="center">
-            <img alt="booo" src="ajax-loader.gif" />
+                    </form>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <!-- EMPTY -->
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- END: LOADING -->
+
+        <!-- START: LOADING -->
+        <div id="ajax_loader" class="modal" style="display: none">
+            <div class="center">
+                <img alt="booo" src="ajax-loader.gif" />
+            </div>
+        </div>
+        <!-- END: LOADING -->
 
 
-    <!-- END: Form -->
-    <!-- START: Footer -->
+        <!-- END: Form -->
+        <!-- START: Footer -->
+    </main>
+    <footer>
     <div id="footer">
         <div class="container">
             <div class="text-muted pull-left"><a href="#" target="_blank">Built with Bootstrap&reg;</a></div>
@@ -214,6 +236,7 @@
         </div>
     </div>
     <!-- END: Footer -->
+    </footer>
     <script src="js/app.js"></script>
     <script src="js/geo_locate.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANnyMltzBRGiRZs1FoOTf-asFZBDkmprc" async defer></script>
