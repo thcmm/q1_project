@@ -22,21 +22,24 @@ function showPosition(position) {
         url: "https://api.wunderground.com/api/425f5dcedcd8dbce/geolookup/conditions/q/"+latlon+".json",
         dataType: "jsonp",
         success: function(parsed_json) {
-            console.log(parsed_json);
+            // console.log(parsed_json);
             // var location = parsed_json['location']['city'];
             var location = parsed_json['current_observation']['display_location']['full'];
-            var temp_f = parsed_json['current_observation']['temp_f'];
+            var temp_c = parsed_json['current_observation']['temp_c'];
             var alt_ft = parsed_json['current_observation']['observation_location']['elevation'];
             var icon_url = parsed_json['current_observation']['icon_url'];
-            var humidity = parsed_json['current_observation']['relative_humidity'];
-            console.log("query relative_humidity", humidity);
+            var p_mb = parsed_json['current_observation']['pressure_mb'];
+            console.log("query pressure_mb", p_mb);
             // var gotQuery = "Current temp in " + location + " " + "CO" + " is: " + temp_f+"F";
+            var alt_strip_ft = alt_ft.replace(/[a-z]/g, ''); // strip out ft non-numeric vals
+            // console.log("alt_strip_ft = ", alt_strip_ft);
+            var alt_c = Math.floor((alt_strip_ft) / 3.2808);
             var obloc = parsed_json['current_observation']['display_location']['state_name'];
-            console.log("query state_name", obloc);
+            // console.log("query state_name", obloc);
             $('#queryReturnLocation').html("Location : " + location);
-            $('#queryReturnElevation').html("Elevation : " + alt_ft);
-            $('#queryReturnTemp').html("Temperature : " + temp_f);
-            $('#queryReturnHumidity').html("Humidity : " + humidity);
+            $('#queryReturnElevation').html("Elevation : " + alt_c + " m");
+            $('#queryReturnTemp').html("Temperature : " + temp_c + " C");
+            $('#queryReturnHumidity').html("Pressure : " + p_mb + " mb");
             document.getElementById("forecastIcon").innerHTML = "<img src='"+icon_url+"'>"; //  make img-responsive
 
             //Satellite

@@ -9,7 +9,7 @@ function get_db_query() {
         var db_elevation = data.Elevation;
 
         $("#sensorReadingTemperature").html("Temperature: " + db_temperature);
-        $("#sensorReadingHumidity").html("Humidity: " + db_humidity);
+        $("#sensorReadingHumidity").html("Pressure: " + db_humidity);
         $("#sensorReadingElevation").html("Elevation: " + db_elevation);
         // console.log("dB query = ", data);
         // console.log("data 0 = ", db_temperature);
