@@ -9,10 +9,10 @@ function get_db_query() {
         var db_elevation = data.Elevation;
 
         $("#sensorReadingTemperature").html("Temperature: " + db_temperature);
-        $("#sensorReadingHumidity").html("Temperature: " + db_humidity);
-        $("#sensorReadingElevation").html("Temperature: " + db_elevation);
-        console.log("dB query = ", data);
-        console.log("data 0 = ", db_temperature);
+        $("#sensorReadingHumidity").html("Humidity: " + db_humidity);
+        $("#sensorReadingElevation").html("Elevation: " + db_elevation);
+        // console.log("dB query = ", data);
+        // console.log("data 0 = ", db_temperature);
         /* END: jQuery db for 1st row of table */
     });
 }
@@ -23,7 +23,8 @@ jQuery(document).ready(function($) {
 // Hide sensor & underground weather panels
 $("#displayArea").hide();
 
-    /* START: LOADING */
+    /* START: LOADING
+    **** LISTENERS FIRE ON ALL Ajax Start / Stop EVENTS !!! */
     // $(document).ajaxStop(function() {
     //     console.debug("ajaxStop");
     //     $("#ajax_loader").hide();
@@ -33,7 +34,6 @@ $("#displayArea").hide();
     //     $("#ajax_loader").show();
     // });
     /* STOP: LOADING */
-
 
     // **** MOVED TO geo_locate:showPosition Callback ****
     // Submit API query
