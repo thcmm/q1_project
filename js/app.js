@@ -20,7 +20,8 @@ function get_db_query() {
 
 jQuery(document).ready(function($) {
     console.log("jQuery loaded...");
-
+// Hide sensor & underground weather panels
+$("#displayArea").hide();
 
     /* START: LOADING */
     // $(document).ajaxStop(function() {

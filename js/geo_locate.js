@@ -18,7 +18,7 @@ function showPosition(position) {
     // START : temp
     $.ajax({
       // http://api.wunderground.com/api/425f5dcedcd8dbce/geolookup/q/37.776289,-122.395234.json
-      // Fixed Boulder: https://api.wunderground.com/api/425f5dcedcd8dbce/geolookup/conditions/q/CO/Boulder.json
+      // Fixed lookup for Boulder: https://api.wunderground.com/api/425f5dcedcd8dbce/geolookup/conditions/q/CO/Boulder.json
         url: "https://api.wunderground.com/api/425f5dcedcd8dbce/geolookup/conditions/q/"+latlon+".json",
         dataType: "jsonp",
         success: function(parsed_json) {
@@ -54,14 +54,10 @@ function showPosition(position) {
             var zoomLev = 16;
             initMap(lat,lon,zoomLev);
             $("#ajax_loader").hide();
+            $("#displayArea").show();
         }
     });
     // END : temp AIzaSyANnyMltzBRGiRZs1FoOTf-asFZBDkmprc
-    //
-    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false";
-    // document.getElementById("mapShow").innerHTML = "<img src='"+img_url+"'>";
-    // console.log("f:showLocation : latlon : ", latlon);
-
 
 }
 
