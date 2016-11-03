@@ -26,6 +26,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <style>
+        #pcb>img {
+          width: 200px;
+          height: 200px;
+          margin: 10px;
+          margin-bottom: -5px;
+        }
         #displayArea {
           display: none;
         }
@@ -41,7 +47,13 @@
             width: 25%;
             height: auto;
         }
-
+        .sensorLableText {
+          margin-top: 15px;
+          font-size: 15px;
+          color: #d9d9d9;
+          font-weight: 600;
+          text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
+        }
         .foreCastText {
             margin-top: 15px;
             font-size: 20px;
@@ -157,23 +169,35 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">Sensor Readings</div>
+                        <!-- PCB Image lable -->
+                        <div class="row">
+                            <div class="col-md-2 text-right foreCastText"></div>
+                            <div class="col-md-8 sensorLableText text-center">MPL3115A2 Sensor<br> Barometric Pressure / Altitude / Temperature</div>
+                            <div class="col-md-2 text-right foreCastText"></div>
+                        </div>
+                        <!-- PCB Image -->
+                        <div class="row">
+                            <div class="col-md-3 text-right foreCastText"></div>
+                            <div id="pcb" class="col-md-6 text-center"><img src="mpl3115a2_web.png" alt="mpl3115a2 board"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
+                        </div>
                         <!-- Inner row 1 : Temperature -->
                         <div class="row">
-                            <div class="col-md-5 text-right foreCastText"></div>
-                            <div id="sensorReadingTemperature" class="panel-body foreCastText text-center"></div>
-                            <div class="col-md-5 text-right foreCastText"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
+                            <div id="sensorReadingTemperature" class="col-md-6 foreCastText text-center"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
                         </div>
                         <!-- Innner row 2 : Humidty -->
                         <div class="row">
-                            <div class="col-md-5 text-right foreCastText"></div>
-                              <div id="sensorReadingHumidity" class="panel-body foreCastText text-center"></div>
-                            <div class="col-md-5 text-right foreCastText"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
+                              <div id="sensorReadingHumidity" class=" col-md-6 foreCastText text-center"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
                         </div>
                         <!-- Inner row 3 : Elevation -->
-                        <div class="row">
-                            <div class="col-md-5 text-right foreCastText"></div>
-                                <div id="sensorReadingElevation" class="panel-body foreCastText text-center"></div>
-                            <div class="col-md-5 text-right foreCastText"></div>
+                        <div class="row" style = "margin-bottom: 10px">
+                            <div class="col-md-3 text-right foreCastText"></div>
+                                <div id="sensorReadingElevation" class="col-md-6 foreCastText text-center"></div>
+                            <div class="col-md-3 text-right foreCastText"></div>
                         </div>
                     </div>
                 </div>
