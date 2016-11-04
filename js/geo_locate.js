@@ -42,16 +42,28 @@ function showPosition(position) {
             $('#queryReturnHumidity').html("Pressure : " + p_mb + " mb");
             document.getElementById("forecastIcon").innerHTML = "<img src='"+icon_url+"'>"; //  make img-responsive
 
-            //Satellite
+            //Underground Weather Maps
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
             var satMap = "https://api.wunderground.com/api/425f5dcedcd8dbce/satellite/image.gif?lat=+lat+&lon=+lon+&radius=100&width=400&height=300&key=sat_ir4_bottom&basemap=1";
 
-            /*"http://api.wunderground.com/api/425f5dcedcd8dbce/satellite/image.gif?lat=38&lon=-96.4&radius=100&width=280&height=280&key=sat_ir4_bottom&basemap=1";
-            */
+            var radarMap =
+            "http://api.wunderground.com/api/425f5dcedcd8dbce/radar/image.gif?centerlat=+lat+&centerlon=+lon+&radius=100&width=400&height=300&newmaps=1"
+
+            // var radsatMap =
+            // "http://api.wunderground.com/api/425f5dcedcd8dbce/radar/satellite/image.gif?rad.maxlat=47.709&rad.maxlon=-69.263&rad.minlat=31.596&rad.minlon=-97.388&rad.width=640&rad.height=480&rad.rainsnow=1&rad.reproj.automerc=1&sat.maxlat=47.709&sat.maxlon=-69.263&sat.minlat=31.596&sat.minlon=-97.388&sat.width=640&sat.height=480&sat.key=sat_ir4_bottom&sat.gtt=107&sat.proj=me&sat.timelabel=0"
+
+            // Satellite Map
             var satMapClass = document.getElementById("satShow");
-            satMapClass.className = "img-responsive";
+            //satMapClass.className = "img-responsive"; <a href="#" id="pop">
             document.getElementById("satShow").innerHTML = "<img src='"+satMap+"'>";
+
+
+            var radarMapClass = document.getElementById("radarShow");
+            //satMapClass.className = "img-responsive"; <a href="#" id="pop">
+            document.getElementById("radarShow").innerHTML = "<img src='"+radarMap+"'>";
+
+
             // var map;
             // initMap(map, lat, lon);
             var zoomLev = 16;
