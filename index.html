@@ -27,13 +27,14 @@
 
     <style>
         #pcb>img {
-          width: 200px;
-          height: 200px;
-          margin: 10px;
-          margin-bottom: -5px;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            margin-bottom: -5px;
         }
+
         #displayArea {
-          display: none;
+            display: none;
         }
 
         #submitButton {
@@ -43,28 +44,33 @@
 
         #satShow>img {
             /*uw-weather-img*/
-              margin: 5%;
-              margin-bottom: 25px;
-              width: 115%; /*29%*/
-              height: auto;
-              border-radius: 10px;
-              border: 2px solid #1E90FF;
+            margin: 5%;
+            margin-bottom: 25px;
+            width: 115%;
+            /*29%*/
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #1E90FF;
         }
+
         #radarShow>img {
-          margin: 5%;
-          margin-bottom: 25px;
-          width: 115%; /*29%*/
-          height: auto;
-          border-radius: 10px;
-          border: 2px solid #1E90FF;
+            margin: 5%;
+            margin-bottom: 25px;
+            width: 115%;
+            /*29%*/
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #1E90FF;
         }
+
         .sensorLableText {
-          margin-top: 15px;
-          font-size: 15px;
-          color: #d9d9d9;
-          font-weight: 600;
-          text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #d9d9d9;
+            font-weight: 600;
+            text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
         }
+
         .foreCastText {
             margin-top: 15px;
             font-size: 20px;
@@ -85,13 +91,10 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
-
         /*#satShow {
             margin-left: auto;
             margin-right: auto;
         }*/
-
-
         /*.img-responsive {
             display: block;
             margin-left: auto;
@@ -154,9 +157,10 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="the-menu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/index.html">Home</a></li>
-                        <li><a href="https://www.dive-booking.com/q1/index.html">Future Page</a></li>
+                    <ul class="nav navbar-nav"> <!--  -->
+                        <li class="active"><a href="https://www.dive-booking.com/q1/index.html">Home</a></li>
+                        <li><a href="https://www.dive-booking.com/q1/flow.html">Chart</a></li>
+                        <li><a href="https://www.dive-booking.com/q1/data_table.php">Raw</a></li>
                     </ul>
                 </div>
             </div>
@@ -203,13 +207,13 @@
                         <!-- Innner row 2 : Humidty -->
                         <div class="row">
                             <div class="col-md-3 text-right foreCastText"></div>
-                              <div id="sensorReadingHumidity" class=" col-md-6 foreCastText text-center"></div>
+                            <div id="sensorReadingHumidity" class=" col-md-6 foreCastText text-center"></div>
                             <div class="col-md-3 text-right foreCastText"></div>
                         </div>
                         <!-- Inner row 3 : Elevation -->
-                        <div class="row" style = "margin-bottom: 10px">
+                        <div class="row" style="margin-bottom: 10px">
                             <div class="col-md-3 text-right foreCastText"></div>
-                                <div id="sensorReadingElevation" class="col-md-6 foreCastText text-center"></div>
+                            <div id="sensorReadingElevation" class="col-md-6 foreCastText text-center"></div>
                             <div class="col-md-3 text-right foreCastText"></div>
                         </div>
                     </div>
@@ -250,9 +254,9 @@
                         </div>
                         <!-- Inner Row 6 : Weather Maps -->
                         <div class="row">
-                          <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
                             <div id="satShow" class="col-md-4 text-left"></div>
-                            <div id="radarShow" class="col-md-4 text-right" ></div>
+                            <div id="radarShow" class="col-md-4 text-right"></div>
                             <div class="col-md-2"></div>
                             <!-- <div id="radarShow" class="col-md-4"></div>
                             <div id="radarShow" class="col-md-4"></div> -->

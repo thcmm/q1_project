@@ -28,8 +28,8 @@ function showPosition(position) {
             var temp_c = parsed_json['current_observation']['temp_c'];
             var alt_ft = parsed_json['current_observation']['observation_location']['elevation'];
             var icon_url = parsed_json['current_observation']['icon_url'];
-            var p_mb = parsed_json['current_observation']['pressure_mb'];
-            console.log("query pressure_mb", p_mb);
+            var p_in = parsed_json['current_observation']['pressure_in'];
+            // console.log("query pressure_mb", p_mb);
             // var gotQuery = "Current temp in " + location + " " + "CO" + " is: " + temp_f+"F";
             var alt_strip_ft = alt_ft.replace(/[a-z]/g, ''); // strip out ft non-numeric vals
             // console.log("alt_strip_ft = ", alt_strip_ft);
@@ -39,7 +39,7 @@ function showPosition(position) {
             $('#queryReturnLocation').html("Location : " + location);
             $('#queryReturnElevation').html("Elevation : " + alt_c + " m");
             $('#queryReturnTemp').html("Temperature : " + temp_c + " C");
-            $('#queryReturnHumidity').html("Pressure : " + p_mb + " mb");
+            $('#queryReturnHumidity').html("Pressure : " + p_in + " mb");
             document.getElementById("forecastIcon").innerHTML = "<img src='"+icon_url+"'>"; //  make img-responsive
 
             //Underground Weather Maps
@@ -48,7 +48,7 @@ function showPosition(position) {
             var satMap = "https://api.wunderground.com/api/425f5dcedcd8dbce/satellite/image.gif?lat=+lat+&lon=+lon+&radius=100&width=400&height=300&key=sat_ir4_bottom&basemap=1";
 
             var radarMap =
-            "http://api.wunderground.com/api/425f5dcedcd8dbce/radar/image.gif?centerlat=+lat+&centerlon=+lon+&radius=100&width=400&height=300&newmaps=1"
+            "http://api.wunderground.com/api/425f5dcedcd8dbce/radar/image.gif?centerlat=+lat+&centerlon=+lon+&radius=20&width=400&height=300&newmaps=1"
 
             // var radsatMap =
             // "http://api.wunderground.com/api/425f5dcedcd8dbce/radar/satellite/image.gif?rad.maxlat=47.709&rad.maxlon=-69.263&rad.minlat=31.596&rad.minlon=-97.388&rad.width=640&rad.height=480&rad.rainsnow=1&rad.reproj.automerc=1&sat.maxlat=47.709&sat.maxlon=-69.263&sat.minlat=31.596&sat.minlon=-97.388&sat.width=640&sat.height=480&sat.key=sat_ir4_bottom&sat.gtt=107&sat.proj=me&sat.timelabel=0"
