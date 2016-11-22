@@ -84,7 +84,8 @@ google.maps.event.addDomListener(window, 'load', initHeaderMap);
 
 function get_db_query() {
     /* START: jQuery db for 1st row of table */
-    $.get("https://www.dive-booking.com/q1/db_test1/read_db.php", function(data) {
+    /* https://www.dive-booking.com/q1/db_test1/read_db.php */
+    $.get("read_db.php", function(data) {
         var db_temperature = data.Temperature;
         var db_humidity = data.Humidity;
         var db_elevation = data.Elevation;
