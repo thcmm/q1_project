@@ -22,7 +22,6 @@ Underground Weather API
 Google Maps API  
 
 **Someday:**  
-If possible:  
 Suggest daily activities based on weather.  
 Display historical values for current date (as/if available).  
 
