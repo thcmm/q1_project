@@ -1,21 +1,25 @@
 ## Q1 Project : Real-Time Temp/Barometer/Altitude Station
 ***
-_Base functionality:_  
-Pull sensor readings from AVR, push to remote mySQL dB.  
-Contrast actual measurements against readings collected from the Underground Weather API.  
-Display raw sensor readings against API values.  
-Display users (browser) location based on Google Geolocation.  
+**Base functionality:**  
+Pull sensor readings from MPL3115A2 via i2c bus.
+Parse readings, convert to metric on  AVR.
+Make WiFi connection to mySQL server via WiFi h/w.  
+Push updated set of sensor readings to remote mySQL dB.
+Display users (browser) location based on Google Geo-location.
+Contrast sensor measurements against collected Underground Weather API readings.
+Display raw sensor readings against API values.
 
-_Hardware Used:_  
-Arduino Mega 2560  
-MPL3115A2 Sensor: Temperatur, Barometer, Altitude telemetry.  
+**Hardware Used:**  
+Arduino Mega 2560
+Arduino WiFi Shield
+MPL3115A2 Sensor: Temperature, Barometric, Altitude telemetry.
 
-_API's Used:_  
-Underground Weather API  
-Google Maps API  
+**API's Used:**  
+Underground Weather API
+Google Maps API
 
+**Someday:**  
+If possible:
+Suggest daily activities based on weather.
+Display historical values for current date (as/if available).
 
-_Someday:_  
-If possible:  
-Suggest daily activities based on weather.   
-Display historical values for current date (as/if available).  
