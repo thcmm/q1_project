@@ -1,4 +1,4 @@
-## Q1 Project : Real-Time Temp/Barometer/Altitude Station
+## Q1 Project : tsarkisian
 ***
 **Base functionality:**  
 Pull sensor readings from MPL3115A2 via i2c bus.
