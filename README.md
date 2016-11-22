@@ -1,7 +1,7 @@
 ## Q1 Project : tsarkisian
 ***
 **Must use the following URL to access site:**   
-[https://www.dive-booking.com/q1/q1project/index.html]      
+[](https://www.dive-booking.com/q1/q1project/index.html)      
 **Base functionality:**  
 Pull sensor readings from MPL3115A2 via i2c bus.  
 Parse readings, convert to metric on AVR.  
