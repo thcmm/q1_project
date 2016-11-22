@@ -29,7 +29,7 @@ function showPosition(position) {
             var alt_ft = parsed_json['current_observation']['observation_location']['elevation'];
             var icon_url = parsed_json['current_observation']['icon_url'];
             var p_in = parsed_json['current_observation']['pressure_in'];
-            // console.log("query pressure_mb", p_mb);
+            console.log("query pressure_in", p_in);
             // var gotQuery = "Current temp in " + location + " " + "CO" + " is: " + temp_f+"F";
             var alt_strip_ft = alt_ft.replace(/[a-z]/g, ''); // strip out ft non-numeric vals
             // console.log("alt_strip_ft = ", alt_strip_ft);

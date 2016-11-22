@@ -42,6 +42,10 @@
             margin-bottom: 20px;
             margin-left: 200px;
         }
+
+        .table-header {
+          color: #6495ED;
+        }
     </style>
 </head>
 
@@ -78,12 +82,13 @@
             <div class="col-md-3 text-right foreCastText"></div>
           <!-- <div id="lastinsert" class="col-md-8 text-center"><?php $lastpost ?></div> -->
             <div class="col-md-5 text-right foreCastText">
-          <table border="1" cellspacing="1" cellpadding="1">
+              <!-- border="1" cellspacing="1" cellpadding="1" -->
+          <table class="table table-striped table-bordered table-hover">
        		<tr>
-       			<td>&nbsp;Timestamp&nbsp;</td>
-       			<td>&nbsp;Temperature 1&nbsp;</td>
-       			<td>&nbsp;Humidity 1&nbsp;</td>
-       			<td>&nbsp;Elevation 1&nbsp;</td>
+       			<td class ="table-header">&nbsp;Timestamp&nbsp;</td>
+       			<td class ="table-header">&nbsp;Temperature 1&nbsp;</td>
+       			<td class ="table-header">&nbsp;Humidity 1&nbsp;</td>
+       			<td class ="table-header">&nbsp;Elevation 1&nbsp;</td>
        		</tr>
 
              <?php
